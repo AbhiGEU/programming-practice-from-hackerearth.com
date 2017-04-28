@@ -1,0 +1,27 @@
+/* Find Product*/
+#include <stdio.h>
+//#include <ctype.h>
+//#include <iostream>
+//using namespace std;
+
+int main()
+{
+	int init = 1;
+	int count;
+	long long int Product = init;
+	int current;
+	//cout << "how many numbers?";
+	scanf("%d", &count);
+	for (int i = 0; i < count; i++) {
+		//cout << "input a number";
+		scanf("%d", &current);
+		//cout << "current: " << current << endl;
+		Product = (Product * current)% (1000000007);
+		//cout << "product: " << Product << endl;
+	}
+	printf("%lli",Product);
+	//cout << "Product: " << Product << endl;
+	//system("pause");
+	//cin.get();
+	return 0;
+}
