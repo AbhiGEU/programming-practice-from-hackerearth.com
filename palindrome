@@ -1,0 +1,52 @@
+/* palindrome example */
+#include <stdio.h>
+#include <ctype.h>
+//#include <iostream>
+//using namespace std;
+
+int main()
+{
+	int i = 0;
+    //char input[] = "epallape";
+	char input[100];
+	scanf("%s", input);
+	//int k = 0;
+	//while (k < sizeof(input)) {
+		//if (input[k] == NULL) {
+			//k = k - 1;
+			//break;
+		//}
+		//k++;
+	//}
+	//scanf("%s", char str[]);
+	//
+	//int l = sizeof(input)-2;
+	//int l = k;
+	int l = strlen(input)-1;
+	//cout << "size of input array:" <<" "<< l << endl;
+
+	while (input[i]) {
+		if ((l-i)==i) {
+			//cout << (l - i) << " " << i << endl;
+			printf("YES");
+			break;
+		}
+		else{
+			if (input[l - i] == input[i]) {
+				//cout << input[l - i] << " " << input[i] << endl;
+				if (abs((l - i) - i) == 1) {
+					printf("YES");
+					break;
+				}
+			}
+			else if (input[l-i] != input[i]) {
+				//cout << input[l-i]<<" " << input[i] << endl;
+				printf("NO");
+				break;
+			}
+		}
+		i++;
+	}
+	//cin.get();
+	return 0;
+}
