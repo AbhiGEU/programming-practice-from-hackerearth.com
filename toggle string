@@ -1,0 +1,21 @@
+/* toggle string */
+/* toupper example */
+#include <stdio.h>
+#include <ctype.h>
+int main ()
+{
+  int i=0;
+  char str[]="abcdE\n";
+  char c;
+  while (str[i])
+  {
+    c=str[i];
+    if(islower(c)){
+        putchar (toupper(c)); 
+    }else{
+        putchar (tolower(c));
+    }
+    i++;
+  }
+  return 0;
+}
