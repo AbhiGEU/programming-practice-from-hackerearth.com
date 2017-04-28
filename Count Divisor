@@ -1,0 +1,28 @@
+/* Count Divisor*/
+#include <stdio.h>
+//#include <ctype.h>
+//#include <iostream>
+//using namespace std;
+
+int main()
+{
+	int l, r, k;
+	int count = 0;
+	//cout << "input l: " << endl;
+	scanf("%d", &l);
+	//cout << "input r: " << endl;
+	scanf("%d", &r);
+	//cout << "input k: " << endl;
+	scanf("%d", &k);
+	for (int i = l; i <= r; i++) {
+		if ((i%k) == 0) {
+			count++;
+		}
+	}
+	printf("%d",count);
+	//cout << "count: " << count << endl;
+
+	//system("pause");
+	//cin.get();
+	return 0;
+}
