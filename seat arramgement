@@ -1,0 +1,50 @@
+/*Seat Arrangement*/
+#include <stdio.h>
+//#include <iostream>
+//using namespace std;
+
+int main() {
+	int N, T, R, S;
+	//int seats[T];
+	//cout << "Enter number of seats" << endl;
+	scanf("%d", &T);
+	while (T > 0) {
+		//cout << "input n:" << endl;
+		scanf("%d", &N);
+		R = N % 12;
+		if (R == 0) {
+			S = N - 11;
+		}
+		else if(R<7){
+			S = N+(2*abs(R - 6)) + 1;
+		}
+		else {
+			S = N - (2*(R - 6)) + 1;
+		}
+		//the seating function
+		if (N % 3 == 2) {
+			//middle seat
+			printf("%d", S);
+			printf(" MS\n");
+		}
+		else {
+			if (N % 6 == 0) {
+				//window
+				printf("%d", S);
+				printf(" WS\n");
+			}
+			else if (N % 6 == 1) {
+				//window
+				printf("%d", S);
+				printf(" WS\n");
+			}
+			else {
+				//aside seat
+				printf("%d", S);
+				printf(" AS\n");
+			}
+		}
+		T--;
+	}
+
+}
