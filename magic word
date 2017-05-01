@@ -1,0 +1,89 @@
+/*magic word*/
+#include <stdio.h>
+//#include <iostream>
+//using namespace std;
+int is_prime(char input);
+
+
+
+int main() {
+	int T, N; //T=case, N=length, L1 = distance to left prime, L2 = distance to right prime
+	char C1, C2; //store the character of left prime and right prime
+	int start, end;
+	scanf("%d", &T); //using input number of cases
+
+	for (int i = 0; i < T; i++) {  //for this many case
+		char word[500]; //create array of characters
+		scanf("%d", &N); //input the length
+		scanf("%s", word); //input the word
+		for (int j = 0; j < N; j++) { //for lenght of word
+			//if (is_prime(word[j]) != 1) { //if the word is not prime
+			if (isupper(word[j])) {
+				start = 65;
+				end = 90;
+			}
+			else {
+				start = 97;
+				end = 122;
+			}
+			int L1 = NULL, L2 = NULL;
+			for (int s = (int)word[j]; s < end; s++) {
+				if (is_prime(s) == 1) {
+					L2 = s - (int)word[j];
+					C2 = (char)s;
+					//cout << "prime 2: "<<C2<<endl;
+					break;
+				}
+			}
+			for (int m = (int)word[j]; m >= start; m--) {
+				if (is_prime(m) == 1) {
+					L1 = (int)word[j] - m;
+					C1 = (char)m;
+					//cout << "prime 1: " << C1 << endl;
+					break;
+				}
+			}
+				if ((int)word[j] ==94 || (int)word[j] ==95) {
+					printf("a");
+				}
+				else if ((int)word[j] >= 91 && (int)word[j] <= 93) {
+					printf("Y");
+				}
+				else if ((int)word[j] >= 123 && (int)word[j] <= 125) {
+					printf("q");
+				}else if (isalpha(word[j]) == 0) {
+					printf("C");
+				}else if (L1 == NULL) {
+					printf("%c", C2);
+				}
+				else if (L2 == NULL) {
+					printf("%c", C1);
+				}else if (L1 <= L2) {
+					//word[j] = C1;
+					//cout << int(C1) << " ";
+					printf("%c",C1);
+				}
+				else {
+					//word[j] = C2;
+					//cout << int(C2) << " ";
+					printf("%c", C2);
+				}
+			}
+			printf("\n");
+		}
+	//}
+	system("pause");
+
+}
+
+// 1 = prime, 0 = not prime
+int is_prime(char input) {
+	int i = (int)input;
+	int is_prime = 1;
+	for (int k = 2; k < i; k++) {
+		if (i % k == 0) {
+			is_prime = 0;
+		}
+	}
+	return is_prime;
+}
