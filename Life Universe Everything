@@ -1,0 +1,18 @@
+/*Life Universe Everything*/
+#include <stdio.h>
+
+int main() {
+	int stop = 0;
+	int N;
+	while(stop==0) {
+		scanf("%d", &N);
+		if (N == 42) {
+			stop = 1;
+		}
+		if (stop == 0) {
+			printf("%d", N);
+			printf("\n");
+		}
+	}
+
+}
