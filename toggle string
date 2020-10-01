@@ -1,21 +1,16 @@
-/* toggle string */
-/* toupper example */
-#include <stdio.h>
-#include <ctype.h>
-int main ()
+#include<stdio.h>
+void main()
 {
-  int i=0;
-  char str[]="abcdE\n";
-  char c;
-  while (str[i])
-  {
-    c=str[i];
-    if(islower(c)){
-        putchar (toupper(c)); 
-    }else{
-        putchar (tolower(c));
-    }
-    i++;
-  }
-  return 0;
+	char S[100];
+	int l,i;
+	scanf("%s",S);
+	l=strlen(S);
+	for(i=0;i<l;i++)
+	{
+		if(S[i]>=65&&S[i]<=90)
+		S[i]+=32;
+		else
+		S[i]-=32;
+	}
+	printf("%s",S);
 }
